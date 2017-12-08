@@ -90,7 +90,7 @@ A picture is worth a thousand words.
 
 | Without the MITM | With the MITM |
 | ---------------- | ------------- |
-| https://github.com/aebm/sysadvent_2017/raw/master/images/working.png | https://github.com/aebm/sysadvent_2017/raw/master/images/mitm.png |
+| ![](https://github.com/aebm/sysadvent_2017/raw/master/images/working.png) | ![](https://github.com/aebm/sysadvent_2017/raw/master/images/mitm.png) |
 
 Ultimately, the problem turned out to be one of the most exotic possibilities we had come up with, making us feel pretty:
 
