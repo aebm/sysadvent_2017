@@ -73,7 +73,7 @@ Meanwhile, while trying to re-create the problem end state and work toward makin
 
 Translation: distributed systems are fun... and determining whether a connection is still valid is often the cherry on top.
 
-But before trying to poke at the TCP stack, we kept investigating. We found out that [AMQP](https://google.com/) supports heartbeats, and they are used to check if a connection is [still valid](https://www.rabbitmq.com/heartbeats.html).  The library we were using had this option disabled by default, which explains why the container was blocked and waiting instead of trying to reconnect to the broker. To make things worse because the container is a consumer, it never sends data to the broker. If the container has sent data using the same socket it could detect on its own whether the connection was still valid.
+But before trying to poke at the TCP stack, we kept investigating. We found out that [AMQP](https://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol) supports heartbeats, and they are used to check if a connection is [still valid](https://www.rabbitmq.com/heartbeats.html).  The library we were using had this option disabled by default, which explains why the container was blocked and waiting instead of trying to reconnect to the broker. To make things worse because the container is a consumer, it never sends data to the broker. If the container has sent data using the same socket it could detect on its own whether the connection was still valid.
 
 To fix this, we evaluated two solutions:
 
